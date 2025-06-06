@@ -45,13 +45,28 @@ export class ChallengeController {
         Number(limit)
       );
 
+      // Use a simplified response format - remove nested objects where possible
+      const response = {
+        status: true,
+        message: "Challenges fetched successfully!",
+        data: result.data.map(challenge => ({
+          id: challenge.id,
+          title: challenge.title,
+          description: challenge.description,
+          total_days: challenge.total_days,
+          type: challenge.type
+        })),
+        totalItems: result.meta.totalItems,
+        itemCount: result.meta.itemCount,
+        itemsPerPage: result.meta.itemsPerPage,
+        totalPages: result.meta.totalPages,
+        currentPage: result.meta.currentPage
+      };
+
       return h
-        .response({
-          status: true,
-          message: "Challenges fetched successfully!",
-          data: result.data,
-          meta: result.meta,
-        })
+        .response(response)
+        .header("Content-Encoding", "identity")
+        .header("Cache-Control", "no-transform")
         .code(200);
     } catch (error: any) {
       return h
