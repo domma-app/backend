@@ -2,6 +2,9 @@
 
 This is a Node.js backend project using **TypeScript**, **Hapi.js**, **Prisma ORM**, and **PostgreSQL**. The application provides APIs for financial management including transactions, budgets, challenges, and user profiles with file upload capabilities via Supabase Storage.
 
+![Frame 36 (1)](https://github.com/user-attachments/assets/2d2e80fd-7ffd-429f-bdd8-ac9b4b1b25c6)
+
+
 ---
 
 ## 🚀 Getting Started
