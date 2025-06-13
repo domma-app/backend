@@ -10,7 +10,7 @@ This is a Node.js backend project using **TypeScript**, **Hapi.js**, **Prisma OR
 
 Before you begin, ensure you have the following installed:
 - **Node.js** (v20 or higher)
-- **npm** or **yarn**
+- **npm**
 - **PostgreSQL** database
 - **Git**
 
